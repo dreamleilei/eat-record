@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: eat-record-backend
+  cloud:
+    config:
+      label: master
+      profile: ${spring.profiles.active}
+
+server:
+  port: 8123
+  servlet:
+    context-path: /eat
+
+---
+
+spring:
+  profiles: local
+eureka:
+  instance:
+    preferIpAddress: true
