@@ -7,6 +7,7 @@ const path = require('path');
 module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: { // 开发服务器
+        port: 8080,
         contentBase: '../dist'
     },
     output: { // 输出

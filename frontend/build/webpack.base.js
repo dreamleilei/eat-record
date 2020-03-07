@@ -2,6 +2,7 @@
 // 存放 dev 和 prod 通用配置
 const webpack = require('webpack');
 const path = require("path");
+const { resolve } = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -36,5 +37,13 @@ module.exports = {
             template: path.resolve(__dirname, '../index.html'),
         }),
     ],// 插件
+
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': resolve('src'),
+        }
+    },
 };
 
