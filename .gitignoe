@@ -27,6 +27,8 @@ nbdist/
 .DS_Store
 /.idea/
 
-#
+
 .idea/
-node_modules/
+*/node_modules/
+frontend/node_modules/
+
