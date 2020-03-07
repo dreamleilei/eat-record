@@ -1,12 +1,9 @@
 import VueRouter from 'vue-router';
 
-import Index from "./page/index.vue";
-import Index1 from "./page/index1.vue";
-import NotFound from "./page/404.vue"
+import Index from "@/page/index";
+import Index1 from "@/page/index1";
+import NotFound from "@/page/404";
 
-const User = {
-    template: '<div>Hello world</div>'
-};
 
 const router = new VueRouter({
     mode: 'history',
