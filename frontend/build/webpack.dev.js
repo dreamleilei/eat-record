@@ -8,7 +8,13 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: { // 开发服务器
         port: 8080,
-        contentBase: '../dist'
+        contentBase: '../dist',
+        historyApiFallback: {
+            rewrites: [
+                {from: /./, to: '/index.html'}
+            ]
+        }
+
     },
     output: { // 输出
         filename: 'js/[name].[hash].js', // 每次保存 hash 都变化
