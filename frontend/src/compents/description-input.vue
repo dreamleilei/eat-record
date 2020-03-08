@@ -3,6 +3,8 @@
         <label for="input" >请输入吃饭的菜品</label>
         <input type="text" id="input" name="input" @click="logConsole" v-model="inputValue">
         <div>{{inputValue}}</div>
+        <div v-if="showErrorFunction()"> showError</div>
+        <div v-else>not ShowError</div>
     </div>
 </template>
 
@@ -15,12 +17,14 @@
         props: {
             inputValueProp: {
                 type: String
-            }
+            },
+            showError: Boolean
         },
 
         data() {
             return {
-                inputValue: ""
+                inputValue: "",
+                showErrorData: ""
             }
         },
 
@@ -42,11 +46,18 @@
         mounted() {
             console.log("mounted input ");
             this.inputValue = this.inputValueProp;
+            this.showErrorData = this.showError;
 
         },
 
         updated() {
             console.log("update input ");
+            debugger
+            if (this.inputValue.length % 2 === 0) {
+                this.showErrorData = true;
+            } else {
+                this.showErrorData = false
+            }
         },
 
         beforeDestroy() {
@@ -60,6 +71,9 @@
         methods: {
             logConsole() {
                 console.log(this.inputValue);
+            },
+            showErrorFunction() {
+                return this.showErrorData;
             }
         },
     };

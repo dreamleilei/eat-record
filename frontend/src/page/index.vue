@@ -3,7 +3,7 @@
     <div>
         <form action="#" method="post" >
             <DatePicker :descriptionValueProp="now()" ></DatePicker>
-            <InputPicker :inputValueProp = "'鱼香肉丝'"></InputPicker>
+            <InputPicker :inputValueProp = "'鱼香肉丝'" :showError="true"></InputPicker>
             <div>
                 <input type="submit" value="提交">
             </div>
@@ -61,7 +61,7 @@
 
             now() {
                 return "2020-02-02"
-            }
+            },
         },
     }
 </script>
